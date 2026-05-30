@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+@Transactional
 public class ParentService {
 
     private final ParentRepository parentRepository;
@@ -50,7 +50,7 @@ public class ParentService {
                 .build();
     }
 
-
+    @Transactional(readOnly = true)
     public List<AvailableOfferingResponse>
     getAvailableOfferings(UUID parentId) {
 
